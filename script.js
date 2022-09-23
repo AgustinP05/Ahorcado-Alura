@@ -57,21 +57,22 @@ function addPalabrita(){
         document.getElementById("letrasMaximas").style.visibility="visible"
         return;
     }else{
+        listPalabras.push(letraIndividual);
+        /*Al array listPalabras se le ingresará al fnal el array con la nueva palabra con letras separadas */
+       
         letraIndividual.forEach((element) =>{
            if(!(permitidas.includes(element))){
                 document.getElementById("campoAgegarPalabra").value="";
                 console.log("no se puede");
-                listPalabras=0;
+                listPalabras.pop(letraIndividual);
                 
                 return;
            }else{
                 document.getElementById("letrasMaximas").style.visibility="hidden";
-           }
+            }
         })
 
-        listPalabras.push(letraIndividual);
-        /*Al array listPalabras se le ingresará al fnal el array con la nueva palabra con letras separadas */
-        console.log(listPalabras);
+         console.log(listPalabras);
         console.log("'"+palabrita+"' se ha agregado a la lista");
     }
  
