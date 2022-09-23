@@ -322,7 +322,7 @@ main{
 
 #campoAgegarPalabra{
     text-align: center;
-    padding: 7px;
+    padding: 5px;
     width: 350px;
     height: 30px;
     background: transparent;
@@ -392,12 +392,13 @@ main{
 
 
 /*------------Responsive--------------*/
-@media screen and (max-width:480px){/*Si encuentras una pantalla hasta 480px de maximo, aplicar lo siguiente*/
+@media screen and (min-width:300px){/*Si encuentras una pantalla hasta 480px de maximo, aplicar lo siguiente*/
 
 /*Pantalla juego---------------------------------/
 /*Contenedora de todos dentro del juego*/
 #pantalla_juego{
-    width: 421px;
+    /* width: 421px; */
+    width: 300px;
 }
 /**********************/
 
@@ -408,25 +409,25 @@ main{
 
 #letra_correcta{
     margin: 13px 0 2px 0;
-    border: 1px solid black;
+    
     position: relative;
     
     display: inline-block;
-    width: 421px;
+    width: 300px;
     height: auto;
 }
 
 /*Borde inferior de las letras correctas*/
 .contenedor_letra{
-    width: 5vh;
-    height: 40px;
+    width: 4vh;
+    height: 33px;
     
-    margin: 0 5px;
+    margin: 0 2px;
 }
 
 /*letras correctas*/
 .letra{
-    font-size: 7vh;
+    font-size: 5vh;
 }
 
 /*Contenedor letras incorrectas*/
@@ -451,7 +452,7 @@ main{
 
 .botonNuevoJuego{
     padding: 5px; /*Margen interno*/
-    width: 150px; /*Ancho*/
+    width: 110px; /*Ancho*/
     height: 35px;/*Alto*/
     
     font-size: 14px;/*Tamaño de fuente*/
@@ -463,7 +464,7 @@ main{
     display:inline-block;  
 
     padding: 7px;
-    width: 150px;
+    width: 110px;
     height: 35px;
     
     font-size: 14px;
@@ -471,7 +472,12 @@ main{
 /*-----------------------------------------------*/
 
 #campoAgegarPalabra{
-    width: 300px;
+    width: 250px;
+}
+
+#letrasMaximas{
+    width: 280px;
+    margin: 50px 2px 0;
 }
 
 }
