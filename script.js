@@ -21,7 +21,8 @@ function inicioJugar(){
     
 }/*Al dar click al boton Iniciar Juego, aparece el juego.*/
  
-
+var letrasPermitidas="qwertyuiopñlkjhgfdsazxcvbnm";
+var permitidas=letrasPermitidas.split("");
 /*--Verificar palabras y separar las letras en grupos:--*/
 var letraIndividual;
 
@@ -48,24 +49,34 @@ function addPalabrita(){
 
     var palabrita=document.getElementById("campoAgegarPalabra").value.toLowerCase();
     
+    letraIndividual=palabrita.split("");/*Separar la palabra por letra y retornarlo en un array*/
+    /*letraIndividual seria el array con las letras separadas. */
+
     if(palabrita.length>12){
         console.log("El maximo de letras es doce. Ingrese una palabra mas corta");
         document.getElementById("letrasMaximas").style.visibility="visible"
         return;
-    }else if(!(permitidas.includes(palabrita.split("")))){
-        console.log("Solo se pueden ingresar letras");
-        return;
     }else{
-        document.getElementById("letrasMaximas").style.visibility="hidden"
-        
+        letraIndividual.forEach((element) =>{
+           if(!(permitidas.includes(element))){
+                document.getElementById("campoAgegarPalabra").value="";
+                console.log("no se puede");
+                listPalabras=0;
+                
+                return;
+           }else{
+                document.getElementById("letrasMaximas").style.visibility="hidden";
+           }
+        })
+
+        listPalabras.push(letraIndividual);
+        /*Al array listPalabras se le ingresará al fnal el array con la nueva palabra con letras separadas */
+        console.log(listPalabras);
+        console.log("'"+palabrita+"' se ha agregado a la lista");
     }
  
-    letraIndividual=palabrita.split("");/*Separar la palabra por letra y retornarlo en un array*/
-    /*letraIndividual seria el array con las letras separadas. */
-    listPalabras.push(letraIndividual);
-    /*Al array listPalabras se le ingresará al fnal el array con la nueva palabra con letras separadas */
-    console.log(listPalabras);
-    console.log("'"+palabrita+"' se ha agregado a la lista");
+    
+    
 }
 /*Entonces lo que agregue en el campo va a ir dentro del array de lista de palabras. */
 
@@ -114,8 +125,7 @@ var puntoGanado=0;/*puntos por cada letra correcta */
 var puntoPerdido=0;/*puntos por cada letra incorrecta */
 
 
-var letrasPermitidas="qwertyuiopñlkjhgfdsazxcvbnm";
-var permitidas=letrasPermitidas.split("");
+
 
 
 
