@@ -96,7 +96,7 @@ console.log(listPalabras); /*En consola se mostrara todas las palabras disponibl
 /*Sortear numero para dar palabra aleatoria de la lista*/ 
 
 function seleccionRandom(lista){
-    return lista[Math.floor(Math.random()*(listPalabras.length+1))];
+    return lista[Math.floor(Math.random()*(listPalabras.length))];
 }
 var palabraAleatoria= seleccionRandom(listPalabras);
 
